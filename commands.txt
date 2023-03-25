@@ -1,0 +1,578 @@
+global author.name name
+global author.email email
+
+
+			   add			commit
+working directory --------->staging area---------->Git respository
+working directory <------------------------------- Git repository
+				    git checkout
+
+
+==>to commit changes
+git add file_name(Add files to staging area)
+git status (We will know which files need to commit)
+git commit -m "Commit changes"<-commit and gives the message(commit to the git repository)
+git log(commits history)
+git checkout nameOfDirectory_or_branchOfGIT(checkout commits of branch)
+git commit -a -m "Commit changes"<-commit and gives the message(commit all chanhes to the git repository)
+
+
+My git-repository commands:
+____________________________
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub (master)
+$ cd git repository
+bash: cd: too many arguments
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub (master)
+$ cd git-repository
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (master)
+$ git init
+Reinitialized existing Git repository in C:/Users/HP/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository/.git/
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (master)
+$ ls
+gopi/
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (master)
+$ ls -a
+./  ../  .git/  gopi/
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (master)
+$  git branch -m main
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$  git branch -m master
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (master)
+$  git branch -m main
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ echo First > 1.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ ls
+1.txt  gopi/
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ cat 1.txt
+First
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ ls .git/objects
+info/  pack/
+
+Blu Hunt
+
+
+
+
+
+
+
+warning: in the working copy of '1.txt', LF will be replaced by CRLF the next time Git touches it
+Aborting commit due to empty commit message.
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git add 1.txt
+warning: in the working copy of '1.txt', LF will be replaced by CRLF the next time Git touches it
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   1.txt
+
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git commit -m "First awesome commit"
+[main 095d8a4] First awesome commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git log
+commit 095d8a4a4736dba07a598a34cf471806db085814 (HEAD -> main)
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:58:41 2023 +0530
+
+    First awesome commit
+
+commit c1b0108e268d60dacfbac78e20c667357c567697
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:49:14 2023 +0530
+
+    Blu Hunt
+
+    c
+
+    d
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ echo second > 2.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ ls
+1.txt  2.txt  gopi/
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git add 2.txt
+warning: in the working copy of '2.txt', LF will be replaced by CRLF the next time Git touches it
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git commit -m "Second awesome commit"
+[main b863429] Second awesome commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 2.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git log
+commit b863429983ef5a0920920716f69aea2af2499060 (HEAD -> main)
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:08:52 2023 +0530
+
+    Second awesome commit
+
+commit 095d8a4a4736dba07a598a34cf471806db085814
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:58:41 2023 +0530
+
+    First awesome commit
+
+commit c1b0108e268d60dacfbac78e20c667357c567697
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:49:14 2023 +0530
+
+    Blu Hunt
+
+    c
+
+    d
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ ls
+1.txt  2.txt  gopi/
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git checkout
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ ^C
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git checkout 095d8a4a4736dba07a598a34cf471806db085814
+Note: switching to '095d8a4a4736dba07a598a34cf471806db085814'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 095d8a4 First awesome commit
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository ((095d8a4...))
+$ ls
+1.txt  gopi/
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository ((095d8a4...))
+$ git log
+commit 095d8a4a4736dba07a598a34cf471806db085814 (HEAD)
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:58:41 2023 +0530
+
+    First awesome commit
+
+commit c1b0108e268d60dacfbac78e20c667357c567697
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:49:14 2023 +0530
+
+    Blu Hunt
+
+    c
+
+    d
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository ((095d8a4...))
+$ git checkout main
+Previous HEAD position was 095d8a4 First awesome commit
+Switched to branch 'main'
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ ls
+1.txt  2.txt  gopi/
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git log
+commit b863429983ef5a0920920716f69aea2af2499060 (HEAD -> main)
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:08:52 2023 +0530
+
+    Second awesome commit
+
+commit 095d8a4a4736dba07a598a34cf471806db085814
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:58:41 2023 +0530
+
+    First awesome commit
+
+commit c1b0108e268d60dacfbac78e20c667357c567697
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:49:14 2023 +0530
+
+    Blu Hunt
+
+    c
+
+    d
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ echo "Some changes" > 1.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ cat 1.txt
+Some changes
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ echo "Some other changes" >> 1.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ cat 1.txt
+Some changes
+Some other changes
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git commit -a -m "Commit in first text"
+warning: in the working copy of '1.txt', LF will be replaced by CRLF the next time Git touches it
+[main 563d1af] Commit in first text
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git log
+commit 563d1af0c30ff488c4d59cb5fa20e0bbb8d8da7c (HEAD -> main)
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:29:22 2023 +0530
+
+    Commit in first text
+
+commit b863429983ef5a0920920716f69aea2af2499060
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:08:52 2023 +0530
+
+    Second awesome commit
+
+commit 095d8a4a4736dba07a598a34cf471806db085814
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:58:41 2023 +0530
+
+    First awesome commit
+
+commit c1b0108e268d60dacfbac78e20c667357c567697
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:49:14 2023 +0530
+
+    Blu Hunt
+
+    c
+
+    d
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git log
+commit 563d1af0c30ff488c4d59cb5fa20e0bbb8d8da7c (HEAD -> main)
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:29:22 2023 +0530
+
+    Commit in first text
+
+commit b863429983ef5a0920920716f69aea2af2499060
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:08:52 2023 +0530
+
+    Second awesome commit
+
+commit 095d8a4a4736dba07a598a34cf471806db085814
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:58:41 2023 +0530
+
+    First awesome commit
+
+commit c1b0108e268d60dacfbac78e20c667357c567697
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:49:14 2023 +0530
+
+    Blu Hunt
+
+    c
+
+    d
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git branch feature1
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git branch
+  feature1
+* main
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git log
+commit 563d1af0c30ff488c4d59cb5fa20e0bbb8d8da7c (HEAD -> main, feature1)
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:29:22 2023 +0530
+
+    Commit in first text
+
+commit b863429983ef5a0920920716f69aea2af2499060
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:08:52 2023 +0530
+
+    Second awesome commit
+
+commit 095d8a4a4736dba07a598a34cf471806db085814
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:58:41 2023 +0530
+
+    First awesome commit
+
+commit c1b0108e268d60dacfbac78e20c667357c567697
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:49:14 2023 +0530
+
+    Blu Hunt
+
+    c
+
+    d
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git checkout feature1
+Switched to branch 'feature1'
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (feature1)
+$ git log
+commit 563d1af0c30ff488c4d59cb5fa20e0bbb8d8da7c (HEAD -> feature1, main)
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:29:22 2023 +0530
+
+    Commit in first text
+
+commit b863429983ef5a0920920716f69aea2af2499060
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:08:52 2023 +0530
+
+    Second awesome commit
+
+commit 095d8a4a4736dba07a598a34cf471806db085814
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:58:41 2023 +0530
+
+    First awesome commit
+
+commit c1b0108e268d60dacfbac78e20c667357c567697
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:49:14 2023 +0530
+
+    Blu Hunt
+
+    c
+
+    d
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (feature1)
+$ ls
+1.txt  2.txt  gopi/
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (feature1)
+$ git status
+On branch feature1
+nothing to commit, working tree clean
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (feature1)
+$ git echo "Third change" > 3.txt
+git: 'echo' is not a git command. See 'git --help'.
+
+The most similar command is
+        fetch
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (feature1)
+$ echo "Third change" > 3.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (feature1)
+$ git commit -m "Third files in feature branch"
+On branch feature1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (feature1)
+$ git add 3.txt
+warning: in the working copy of '3.txt', LF will be replaced by CRLF the next time Git touches it
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (feature1)
+$ git commit -m "Third files in feature branch"
+[feature1 79b82e8] Third files in feature branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 3.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (feature1)
+$ git status
+On branch feature1
+nothing to commit, working tree clean
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (feature1)
+$ git checkout main
+Switched to branch 'main'
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git log
+commit 563d1af0c30ff488c4d59cb5fa20e0bbb8d8da7c (HEAD -> main)
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:29:22 2023 +0530
+
+    Commit in first text
+
+commit b863429983ef5a0920920716f69aea2af2499060
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 22:08:52 2023 +0530
+
+    Second awesome commit
+
+commit 095d8a4a4736dba07a598a34cf471806db085814
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:58:41 2023 +0530
+
+    First awesome commit
+
+commit c1b0108e268d60dacfbac78e20c667357c567697
+Author: Gopi <sammangigopi009@gmail.com>
+Date:   Sat Mar 25 21:49:14 2023 +0530
+
+    Blu Hunt
+
+    c
+
+    d
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ echo "Fourth" > 4.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git add 4.txt
+warning: in the working copy of '4.txt', LF will be replaced by CRLF the next time Git touches it
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git commit -m "4th commit"
+[main ec041d1] 4th commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 4.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git merge feature1
+Merge made by the 'ort' strategy.
+ 3.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 3.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ vim 4.txt
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ ls
+1.txt  2.txt  3.txt  4.txt  gopi/
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git branch -d feature1
+Deleted branch feature1 (was 79b82e8).
+
+
+
+To push into github:
+---------------------
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git remote add origin https://github.com/Gopichand2/git-repository.git
+error: remote origin already exists.
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git remote -v
+origin  https://github.com/Gopichand2/git-repository.git (fetch)
+origin  https://github.com/Gopichand2/git-repository.git (push)
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git push -u origin main
+To https://github.com/Gopichand2/git-repository.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/Gopichand2/git-repository.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git push origin main --force
+Enumerating objects: 20, done.
+Counting objects: 100% (20/20), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (20/20), 1.50 KiB | 513.00 KiB/s, done.
+Total 20 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/Gopichand2/git-repository.git
+ + e88b335...92d3325 main -> main (forced update)
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git fetch
+
+HP@Gopi MINGW64 ~/Desktop/IBM Assignments/Phase-2/5)Git and GitHub/git-repository (main)
+$ git push -u origin main
+Everything up-to-date
+branch 'main' set up to track 'origin/main'.
+
